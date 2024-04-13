@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "dotenv": "^16.4.5",
+    "moment": "^2.30.1",
+    "starling-developer-sdk": "^1.0.3",
+    "util": "^0.12.5"
+  }
+}
