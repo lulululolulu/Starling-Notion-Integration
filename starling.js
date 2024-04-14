@@ -47,6 +47,10 @@ async function fetchTransactions() {
 
 
 fetchTransactions().then(transactions => {
+    if (transactions.length === 0) {
+        console.log('No transactions to process.');
+        process.exit(0);
+    }
     const lastTransaction = transactions[0]; // first transaction is the most recent
     saveLastTransactionDate(lastTransaction.Date.date.start);
 }).catch(error => {
@@ -55,8 +59,8 @@ fetchTransactions().then(transactions => {
 
 function formatForNotion(transactions) {
     return transactions.map(transaction => {
-        const dateObject = new Date(transaction.transactionTime);
-        const formattedDate = `${dateObject.getFullYear()}-${(dateObject.getMonth() + 1).toString().padStart(2, '0')}-${dateObject.getDate().toString().padStart(2, '0')}`;
+        // const dateObject = new Date(transaction.transactionTime);
+        const formattedDate = transaction.transactionTime.substring(0, 10);
 
         return {
             "Name": {
