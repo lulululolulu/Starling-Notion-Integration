@@ -33,7 +33,7 @@ Starling-Notion-Integration integrates Starling Bank's API with Notion to fetch 
     NOTION_INCOME_DATABASE_ID=your_notion_income_database_id_optional_here (use the same database id if you don't want income to be stored separately)
     ```
 
-    ## Configuration
+## Configuration
 
 - **Starling API**: It uses the `STARLING_TOKEN` to authenticate requests with Starling Bank's API.
 - **Notion API**:
