@@ -8,6 +8,7 @@ Starling-Notion-Integration integrates Starling Bank's API with Notion to fetch 
 - Log in to https://developer.starlingbank.com/ to get a Starling Bank API access token.
 - Go to https://www.notion.so/my-integrations to build an internal integration and get a Notion API key.
 - Follow this link https://developers.notion.com/reference/retrieve-a-database to get your notion database id.
+- Remember to share your database with the notion integration: View database -> ... -> Connect to -> Your integration
 
 ## Installation
 
@@ -40,3 +41,4 @@ Starling-Notion-Integration integrates Starling Bank's API with Notion to fetch 
   - **API Key**: Transactions are uploaded using the `NOTION_API_KEY`.
   - **Database ID**: The `NOTION_DATABASE_ID` specifies the Notion database where transactions should be saved.
   - **Income Database ID**: Use the `NOTION_INCOME_DATABASE_ID` if transactions need to be categorized into a separate database specifically for income.
+
