@@ -4,7 +4,7 @@ const LAST_DATE_FILE = path.join(__dirname, 'lastDate.txt');
 
 // function to save the last transaction date
 function saveLastTransactionDate(date) {
-    fs.writeFileSync(LAST_DATE_FILE, `${date}T23:59:59Z`);
+    fs.writeFileSync(LAST_DATE_FILE, date);
 }
 
 // function to get the last transaction date from LAST_DATE_FILE

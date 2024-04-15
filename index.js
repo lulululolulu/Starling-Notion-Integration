@@ -14,11 +14,12 @@ async function processAndUploadTransactions() {
                 transaction.Name,
                 [{ name: transaction.Tags }],
                 transaction.Amount,
-                transaction.Date.start
+                transaction.Date.transactionTime
             );
         }
-
-        console.log('All transactions have been processed and uploaded to Notion.');
+        if (transactions.length > 0) {
+            console.log('All transactions have been processed and uploaded to Notion.');
+        }
     } catch (error) {
         console.error('Failed to process transactions:', error);
     }

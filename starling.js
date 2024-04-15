@@ -52,21 +52,20 @@ fetchTransactions().then(transactions => {
         process.exit(0);
     }
     const lastTransaction = transactions[0]; // first transaction is the most recent
-    saveLastTransactionDate(lastTransaction.Date.start);
+    saveLastTransactionDate(lastTransaction.Date.updatedAt);
 }).catch(error => {
     console.error('Failed to fetch transactions:', error);
 });
 
 function formatForNotion(transactions) {
     return transactions.map(transaction => {
-        const formattedDate = transaction.transactionTime.substring(0, 10);
-
         return {
             "Name": transaction.reference || "No Reference",
             "Tags": formatCategory(transaction.spendingCategory),
             "Amount": transaction.amount.minorUnits / 100,
             "Date": {
-                "start": formattedDate
+                "transactionTime": formatDate(transaction.transactionTime),
+                "updatedAt": transaction.updatedAt
             }
         };
     });
@@ -74,6 +73,10 @@ function formatForNotion(transactions) {
 
 function formatCategory(category) {
     return category.toLowerCase().replace(/_/g, ' ');
+}
+
+function formatDate(date) {
+    return date.substring(0, 10);
 }
 
 
