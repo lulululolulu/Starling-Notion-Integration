@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { Client } = require('@notionhq/client');
 
 // Check if the API key and database ID are provided

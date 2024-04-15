@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const Starling = require('starling-developer-sdk');
 
 
