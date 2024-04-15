@@ -11,10 +11,10 @@ async function processAndUploadTransactions() {
         // Iterate over each transaction and create a page in Notion
         for (const transaction of transactions) {
             await createTransactionPage(
-                transaction.Name.title[0].text.content,
-                [{ name: transaction.Tags.multi_select }],
-                transaction.Amount.number,
-                transaction.Date.date.start
+                transaction.Name,
+                [{ name: transaction.Tags }],
+                transaction.Amount,
+                transaction.Date.start
             );
         }
 
